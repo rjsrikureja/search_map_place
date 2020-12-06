@@ -176,7 +176,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
       child: Row(
         children: <Widget>[
           Container(
-            height: 30,
+            height: 35,
             child: TextField(
               decoration: _inputStyle(),
               controller: _textEditingController,
