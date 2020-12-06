@@ -175,7 +175,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
     return Center(
       child: Row(
         children: <Widget>[
-          Expanded(
+          Flexible(
             child: TextField(
               decoration: _inputStyle(),
               controller: _textEditingController,
