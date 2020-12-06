@@ -175,7 +175,8 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
     return Center(
       child: Row(
         children: <Widget>[
-          Expanded(
+          ClipRRect(
+            borderRadius: BorderRadius.all(Radius.circular(50.0)),
             child: TextField(
               decoration: _inputStyle(),
               controller: _textEditingController,
@@ -237,19 +238,19 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
   */
   InputDecoration _inputStyle() {
     return InputDecoration(
-      hintText: this.widget.placeholder,
-      border: InputBorder.none,
-      contentPadding: EdgeInsets.symmetric(horizontal: 0.0, vertical: 0.0),
-      hintStyle: TextStyle(
-        color: widget.darkMode ? Colors.grey[100] : Colors.grey[850],
-      ),
+        filled: true,
+        hintStyle: TextStyle(color: Colors.black),
+        hintText: this.widget.placeholder,
+        prefixIcon: Visibility(
+          child: Icon(Icons.pin_drop, color: Colors.black,),
+        ),
+        fillColor: Color.fromRGBO(189, 189, 189, 100)
     );
   }
 
   BoxDecoration _containerDecoration() {
     return BoxDecoration(
       color: widget.darkMode ? Colors.grey[800] : Colors.white,
-      borderRadius: BorderRadius.all(Radius.circular(50.0)),
       boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20, spreadRadius: 10)],
     );
   }
