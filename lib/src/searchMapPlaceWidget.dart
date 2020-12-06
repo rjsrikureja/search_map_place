@@ -176,19 +176,16 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
       child: Row(
         children: <Widget>[
           Expanded(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(50.0),
-              child: TextField(
-                decoration: _inputStyle(),
-                controller: _textEditingController,
-                onSubmitted: (_) => _selectPlace(),
-                onEditingComplete: _selectPlace,
-                autofocus: false,
-                focusNode: _fn,
-                style: TextStyle(
-                  fontSize: MediaQuery.of(context).size.width * 0.04,
-                  color: widget.darkMode ? Colors.grey[100] : Colors.grey[850],
-                ),
+            child: TextField(
+              decoration: _inputStyle(),
+              controller: _textEditingController,
+              onSubmitted: (_) => _selectPlace(),
+              onEditingComplete: _selectPlace,
+              autofocus: false,
+              focusNode: _fn,
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.width * 0.04,
+                color: widget.darkMode ? Colors.grey[100] : Colors.grey[850],
               ),
             ),
           ),
@@ -253,6 +250,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
   BoxDecoration _containerDecoration() {
     return BoxDecoration(
       color: widget.darkMode ? Colors.grey[800] : Colors.white,
+      borderRadius: BorderRadius.circular(50.0),
       boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20, spreadRadius: 10)],
     );
   }
