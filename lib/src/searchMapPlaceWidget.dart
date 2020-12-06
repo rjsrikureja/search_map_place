@@ -160,7 +160,8 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
                     opacity: _listOpacity.value,
                     child: Column(
                       children: <Widget>[
-                        Container(child: _placeOption(Place.fromJSON(_placePredictions[0], geocode))),
+                        for (var prediction in _placePredictions)
+                          _placeOption(Place.fromJSON(prediction, geocode)),
                       ],
                     ),
                   ),
@@ -212,7 +213,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
     String place = prediction.description;
 
     return MaterialButton(
-      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 3),
+      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
       onPressed: () => _selectPlace(prediction: prediction),
       child: ListTile(
         title: Text(
