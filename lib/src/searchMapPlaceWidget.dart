@@ -177,6 +177,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
         children: <Widget>[
           Expanded(
             child: ClipRRect(
+              borderRadius: BorderRadius.circular(50.0),
               child: TextField(
                 decoration: _inputStyle(),
                 controller: _textEditingController,
