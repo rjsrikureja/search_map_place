@@ -175,18 +175,19 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
     return Center(
       child: Row(
         children: <Widget>[
-          ClipRRect(
-            borderRadius: BorderRadius.all(Radius.circular(50.0)),
-            child: TextField(
-              decoration: _inputStyle(),
-              controller: _textEditingController,
-              onSubmitted: (_) => _selectPlace(),
-              onEditingComplete: _selectPlace,
-              autofocus: false,
-              focusNode: _fn,
-              style: TextStyle(
-                fontSize: MediaQuery.of(context).size.width * 0.04,
-                color: widget.darkMode ? Colors.grey[100] : Colors.grey[850],
+          Expanded(
+            child: ClipRRect(
+              child: TextField(
+                decoration: _inputStyle(),
+                controller: _textEditingController,
+                onSubmitted: (_) => _selectPlace(),
+                onEditingComplete: _selectPlace,
+                autofocus: false,
+                focusNode: _fn,
+                style: TextStyle(
+                  fontSize: MediaQuery.of(context).size.width * 0.04,
+                  color: widget.darkMode ? Colors.grey[100] : Colors.grey[850],
+                ),
               ),
             ),
           ),
