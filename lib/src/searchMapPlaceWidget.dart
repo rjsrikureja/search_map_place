@@ -99,7 +99,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
   void initState() {
     geocode = Geocoding(apiKey: widget.apiKey, language: widget.language);
     _animationController = AnimationController(vsync: this, duration: Duration(milliseconds: 300));
-    _containerHeight = Tween<double>(begin: 55, end: 65).animate(
+    _containerHeight = Tween<double>(begin: 55, end: 100).animate(
       CurvedAnimation(
         curve: Interval(0.0, 0.5, curve: Curves.easeInOut),
         parent: _animationController,
@@ -158,11 +158,8 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
                 if (_placePredictions.length > 0)
                   Opacity(
                     opacity: _listOpacity.value,
-                    child: Column(
-                      children: <Widget>[
-                        for (var prediction in _placePredictions)
-                          _placeOption(Place.fromJSON(prediction, geocode)),
-                      ],
+                    child: Container(
+                          child: _placeOption(Place.fromJSON(_placePredictions[0], geocode)),
                     ),
                   ),
               ],
@@ -213,7 +210,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
     String place = prediction.description;
 
     return MaterialButton(
-      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 0),
+      padding: EdgeInsets.symmetric(horizontal: 5, vertical: 3),
       onPressed: () => _selectPlace(prediction: prediction),
       child: ListTile(
         title: Text(
