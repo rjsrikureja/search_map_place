@@ -4,7 +4,7 @@ class SearchMapPlaceWidget extends StatefulWidget {
   SearchMapPlaceWidget({
     @required this.apiKey,
     this.placeholder = 'Search',
-    this.icon = Icons.search,
+    this.icon,
     this.hasClearButton = true,
     this.clearIcon = Icons.clear,
     this.iconColor = Colors.blue,
