@@ -249,7 +249,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
 
   BoxDecoration _containerDecoration() {
     return BoxDecoration(
-      color: widget.darkMode ? Colors.grey[800] : Colors.white,
+      color: Color.fromRGBO(189, 189, 189, 100),
       borderRadius: BorderRadius.all(Radius.circular(50.0)),
       boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 20, spreadRadius: 10)],
     );
