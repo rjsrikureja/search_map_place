@@ -175,7 +175,8 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
     return Center(
       child: Row(
         children: <Widget>[
-          Expanded(
+          Container(
+            height: 30,
             child: TextField(
               decoration: _inputStyle(),
               controller: _textEditingController,
@@ -189,7 +190,7 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
               ),
             ),
           ),
-          Container(width: 15, height: 30),
+          Container(width: 15),
           if (widget.hasClearButton)
             GestureDetector(
               onTap: () {
