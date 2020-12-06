@@ -158,10 +158,8 @@ class _SearchMapPlaceWidgetState extends State<SearchMapPlaceWidget> with Ticker
                 if (_placePredictions.length > 0)
                   Opacity(
                     opacity: _listOpacity.value,
-                    child: Column(
-                      children: <Widget>[
-                        _placeOption(Place.fromJSON(_placePredictions[0], geocode)),
-                      ],
+                    child: Expanded(
+                      child: _placeOption(Place.fromJSON(_placePredictions[0], geocode)),
                     ),
                   ),
               ],
