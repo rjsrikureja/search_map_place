@@ -7,7 +7,7 @@ class SearchMapPlaceWidget extends StatefulWidget {
     this.icon,
     this.hasClearButton = true,
     this.clearIcon = Icons.clear,
-    this.iconColor = Colors.blue,
+    this.iconColor = Colors.black,
     this.onSelected,
     this.onSearch,
     this.language = 'en',
